@@ -16,13 +16,13 @@ const NAV = [
       { to: '/admin/leads', label: 'All Leads' },
       { to: '/admin/clients', label: 'All Clients' },
       { to: '/admin/listings', label: 'All Listings' },
-      { to: '/admin/reports', label: 'Reports Export' },
     ],
   },
   {
     label: 'System',
     items: [
       { to: '/admin/audit', label: 'Audit Logs' },
+      { to: '/admin/reports', label: 'Reports Export' },
       { to: '/admin/settings', label: 'Settings' },
     ],
   },
@@ -62,7 +62,7 @@ function NavItem({ to, label }) {
 
 export function Sidebar() {
   return (
-    <aside className="w-[230px] shrink-0 border-r border-sand-200 bg-sand-50 p-4">
+    <aside className="w-[230px] shrink-0 border-r border-[#1f3b63] bg-sand-50 p-4">
       <div className="space-y-5">
         {NAV.map((section) => (
           <div key={section.label}>

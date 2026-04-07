@@ -17,7 +17,7 @@ function Stat({ label, value, hint, accent = 'green' }) {
           : 'neutral'
 
   return (
-    <div className="rounded-lg border border-sand-200 bg-white px-4 py-3">
+    <div className="rounded-lg border border-[#1f3b63] bg-white px-4 py-3">
       <div className="text-xs font-bold text-slate-600">{label}</div>
       <div className="mt-1 text-2xl font-black tracking-tight text-slate-900">
         {value}
@@ -33,7 +33,7 @@ function Stat({ label, value, hint, accent = 'green' }) {
 
 function Row({ name, action, time }) {
   return (
-    <div className="flex items-center justify-between gap-3 border-b border-sand-200 px-3 py-2 last:border-b-0">
+    <div className="flex items-center justify-between gap-3 border-b border-[#c7d3e6] px-3 py-2 last:border-b-0">
       <div className="min-w-0">
         <div className="truncate text-sm font-bold text-slate-900">
           {name} <span className="font-normal text-slate-700">— {action}</span>
@@ -46,7 +46,7 @@ function Row({ name, action, time }) {
 
 function Task({ title, note, badge, badgeVariant, actionLabel }) {
   return (
-    <div className="flex items-center justify-between gap-3 border-b border-sand-200 px-3 py-2 last:border-b-0">
+    <div className="flex items-center justify-between gap-3 border-b border-[#c7d3e6] px-3 py-2 last:border-b-0">
       <div className="min-w-0">
         <div className="truncate text-sm font-bold text-slate-900">{title}</div>
         <div className="truncate text-xs text-slate-600">{note}</div>
@@ -64,7 +64,7 @@ function Task({ title, note, badge, badgeVariant, actionLabel }) {
 export function AdminDashboard() {
   const { title } = useOutletContext()
   return (
-    <div className="rounded-xl border border-sand-200 bg-sand-50 p-6">
+    <div className="rounded-xl bg-[#eef2f8] p-6">
       <div className="mb-4 text-xl font-black tracking-tight text-slate-900">
         {title} — <span className="font-medium">Good morning, Alex</span>
       </div>
@@ -78,7 +78,7 @@ export function AdminDashboard() {
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
         <Card className="shadow-none">
-          <CardHeader className="items-center border-b border-sand-200">
+          <CardHeader className="items-center border-b border-[#c7d3e6]">
             <CardTitle>Recent User Activity</CardTitle>
             <Button variant="ghost" size="sm">
               <FileDown className="h-4 w-4" />
@@ -94,7 +94,7 @@ export function AdminDashboard() {
         </Card>
 
         <Card className="shadow-none">
-          <CardHeader className="items-center border-b border-sand-200">
+          <CardHeader className="items-center border-b border-[#c7d3e6]">
             <CardTitle>Pending Admin Tasks</CardTitle>
             <Badge variant="red">3</Badge>
           </CardHeader>

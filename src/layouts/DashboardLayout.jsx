@@ -19,9 +19,9 @@ export function DashboardLayout() {
   const title = PAGE_TITLES[pathname] ?? 'Dashboard'
 
   return (
-    <div className="min-h-screen bg-sand-50 text-slate-900">
+    <div className="min-h-screen bg-[#e9eef6] text-slate-900">
       <div className="min-h-screen w-full">
-        <div className="min-h-screen overflow-hidden bg-sand-50">
+        <div className="min-h-screen overflow-hidden bg-[#e9eef6]">
           <HeaderBar />
           <div className="flex min-h-[calc(100vh-56px)]">
             <Sidebar />
