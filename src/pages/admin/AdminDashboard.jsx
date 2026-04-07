@@ -31,49 +31,19 @@ function Stat({ label, value, hint, accent = 'green' }) {
   )
 }
 
-function Row({ name, action, time }) {
-  return (
-    <div className="flex items-center justify-between gap-3 border-b border-[#c7d3e6] px-3 py-2 last:border-b-0">
-      <div className="min-w-0">
-        <div className="truncate text-sm font-bold text-slate-900">
-          {name} <span className="font-normal text-slate-700">— {action}</span>
-        </div>
-      </div>
-      <div className="shrink-0 text-xs font-semibold text-slate-500">{time}</div>
-    </div>
-  )
-}
-
-function Task({ title, note, badge, badgeVariant, actionLabel }) {
-  return (
-    <div className="flex items-center justify-between gap-3 border-b border-[#c7d3e6] px-3 py-2 last:border-b-0">
-      <div className="min-w-0">
-        <div className="truncate text-sm font-bold text-slate-900">{title}</div>
-        <div className="truncate text-xs text-slate-600">{note}</div>
-      </div>
-      <div className="flex shrink-0 items-center gap-2">
-        <Badge variant={badgeVariant}>{badge}</Badge>
-        <Button size="sm" className="h-8">
-          {actionLabel}
-        </Button>
-      </div>
-    </div>
-  )
-}
-
 export function AdminDashboard() {
   const { title } = useOutletContext()
   return (
     <div className="rounded-xl bg-[#eef2f8] p-6">
       <div className="mb-4 text-xl font-black tracking-tight text-slate-900">
-        {title} — <span className="font-medium">Good morning, Alex</span>
+        {title}
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <Stat label="Total Users" value="14" hint="3 roles active" accent="blue" />
-        <Stat label="Active Sessions" value="6" hint="Live now" accent="green" />
-        <Stat label="Total Records" value="847" hint="leads + clients" accent="amber" />
-        <Stat label="System Health" value="Good" hint="All modules up" accent="green" />
+        <Stat label="Total Users" value="0" hint="No users yet" accent="blue" />
+        <Stat label="Active Sessions" value="0" hint="No active sessions" accent="green" />
+        <Stat label="Total Records" value="0" hint="No CRM data yet" accent="amber" />
+        <Stat label="System Health" value="Setup" hint="Initial configuration" accent="green" />
       </div>
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -86,47 +56,17 @@ export function AdminDashboard() {
             </Button>
           </CardHeader>
           <CardContent className="p-0">
-            <Row name="Rachel S." action="logged in" time="2m ago" />
-            <Row name="Dan T." action="added lead" time="14m ago" />
-            <Row name="Janet L." action="ran report" time="1h ago" />
-            <Row name="Mike V." action="updated client" time="2h ago" />
+            <div className="px-3 py-6 text-sm text-slate-500">No recent activity.</div>
           </CardContent>
         </Card>
 
         <Card className="shadow-none">
           <CardHeader className="items-center border-b border-[#c7d3e6]">
             <CardTitle>Pending Admin Tasks</CardTitle>
-            <Badge variant="red">3</Badge>
+            <Badge variant="neutral">0</Badge>
           </CardHeader>
           <CardContent className="p-0">
-            <Task
-              title="Approve new user (Sales)"
-              note="Create credentials + assign permissions"
-              badge="Action"
-              badgeVariant="red"
-              actionLabel="Action"
-            />
-            <Task
-              title="Review permission request"
-              note="Manager requests access to Reports"
-              badge="Review"
-              badgeVariant="amber"
-              actionLabel="Review"
-            />
-            <Task
-              title="Export monthly report"
-              note="Executive summary"
-              badge="Scheduled"
-              badgeVariant="blue"
-              actionLabel="View"
-            />
-            <Task
-              title="Backup database"
-              note="Due today"
-              badge="Due today"
-              badgeVariant="amber"
-              actionLabel="Run"
-            />
+            <div className="px-3 py-6 text-sm text-slate-500">No pending tasks.</div>
           </CardContent>
         </Card>
       </div>

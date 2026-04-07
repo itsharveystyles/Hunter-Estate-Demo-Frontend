@@ -1,5 +1,4 @@
 import { useOutletContext } from 'react-router-dom'
-import { Badge } from '../../ui/Badge.jsx'
 import { Card, CardContent, CardHeader, CardTitle } from '../../ui/Card.jsx'
 
 function Metric({ label, value, hint, trend }) {
@@ -15,41 +14,20 @@ function Metric({ label, value, hint, trend }) {
   )
 }
 
-function LeaderRow({ name, deal }) {
-  return (
-    <div className="flex items-center justify-between border-b border-[#c7d3e6] px-3 py-2 last:border-b-0">
-      <div className="text-sm font-semibold text-slate-900">{name}</div>
-      <Badge variant="green">{deal}</Badge>
-    </div>
-  )
-}
-
-function AttentionRow({ name, stage, status, variant = 'amber' }) {
-  return (
-    <div className="flex items-center justify-between gap-2 border-b border-[#c7d3e6] px-3 py-2 last:border-b-0">
-      <div className="text-sm text-slate-900">
-        <span className="font-semibold">{name}</span>
-        <span className="text-slate-700"> — {stage}</span>
-      </div>
-      <Badge variant={variant}>{status}</Badge>
-    </div>
-  )
-}
-
 export function ManagerDashboard() {
   const { title } = useOutletContext() // kept for route consistency
 
   return (
     <div className="rounded-xl bg-[#eef2f8] p-6">
       <div className="mb-4 text-[32px] font-black tracking-tight text-slate-900">
-        Department Overview — <span className="font-medium">Good morning, Janet</span>
+        Department Overview
       </div>
 
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-        <Metric label="Team Leads" value="34" hint="this week" trend="+8" />
-        <Metric label="Revenue MTD" value="$148K" hint="" trend="↑ 12%" />
-        <Metric label="Deals Closing" value="5" hint="this month" />
-        <Metric label="Team Members" value="3" hint="Sales Reps" />
+        <Metric label="Team Leads" value="0" hint="No leads yet" />
+        <Metric label="Revenue MTD" value="$0" hint="No revenue yet" />
+        <Metric label="Deals Closing" value="0" hint="No closed deals" />
+        <Metric label="Team Members" value="0" hint="No team members yet" />
       </div>
 
       <div className="mt-4 grid grid-cols-1 gap-4 lg:grid-cols-2">
@@ -58,9 +36,7 @@ export function ManagerDashboard() {
             <CardTitle>Agent Leaderboard</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
-            <LeaderRow name="Rachel S." deal="4 closed · $55K" />
-            <LeaderRow name="Dan T." deal="3 closed · $41K" />
-            <LeaderRow name="Mike V." deal="2 closed · $29K" />
+            <div className="px-3 py-6 text-sm text-slate-500">No performance data yet.</div>
           </CardContent>
         </Card>
 
@@ -69,24 +45,7 @@ export function ManagerDashboard() {
             <CardTitle>Deals Needing Attention</CardTitle>
           </CardHeader>
           <CardContent className="p-0">
-            <AttentionRow
-              name="Lisa Chen"
-              stage="Negotiating"
-              status="Stalled"
-              variant="red"
-            />
-            <AttentionRow
-              name="Amir Patel"
-              stage="Qualified"
-              status="Follow up"
-              variant="amber"
-            />
-            <AttentionRow
-              name="Tom Nguyen"
-              stage="Contacted"
-              status="3 days idle"
-              variant="amber"
-            />
+            <div className="px-3 py-6 text-sm text-slate-500">No deals require attention.</div>
           </CardContent>
         </Card>
       </div>
