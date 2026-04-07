@@ -1,6 +1,9 @@
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import { DashboardLayout } from './layouts/DashboardLayout.jsx'
 import { AdminDashboard } from './pages/admin/AdminDashboard.jsx'
+import { AdminAuthoritiesPage } from './pages/admin/AdminAuthoritiesPage.jsx'
+import { ManagerDashboard } from './pages/manager/ManagerDashboard.jsx'
+import { SalesDashboard } from './pages/sales/SalesDashboard.jsx'
 import { PlaceholderPage } from './pages/PlaceholderPage.jsx'
 
 export default function App() {
@@ -10,6 +13,7 @@ export default function App() {
         <Route path="/" element={<Navigate to="/admin/overview" replace />} />
 
         <Route element={<DashboardLayout />}>
+          {/* Admin */}
           <Route path="/admin/overview" element={<AdminDashboard />} />
           <Route
             path="/admin/users"
@@ -17,7 +21,7 @@ export default function App() {
           />
           <Route
             path="/admin/roles"
-            element={<PlaceholderPage title="Roles & Permissions" />}
+            element={<AdminAuthoritiesPage />}
           />
           <Route path="/admin/leads" element={<PlaceholderPage title="Leads" />} />
           <Route
@@ -39,6 +43,58 @@ export default function App() {
           <Route
             path="/admin/settings"
             element={<PlaceholderPage title="System Settings" />}
+          />
+
+          {/* Manager */}
+          <Route path="/manager/overview" element={<ManagerDashboard />} />
+          <Route
+            path="/manager/pipeline"
+            element={<PlaceholderPage title="Deal Pipeline" />}
+          />
+          <Route
+            path="/manager/team"
+            element={<PlaceholderPage title="Team Performance" />}
+          />
+          <Route
+            path="/manager/leads"
+            element={<PlaceholderPage title="Leads (Department)" />}
+          />
+          <Route
+            path="/manager/clients"
+            element={<PlaceholderPage title="Clients (Department)" />}
+          />
+          <Route
+            path="/manager/listings"
+            element={<PlaceholderPage title="Listings (Department)" />}
+          />
+          <Route
+            path="/manager/reports"
+            element={<PlaceholderPage title="Reports Export" />}
+          />
+          <Route
+            path="/manager/settings"
+            element={<PlaceholderPage title="Department Settings" />}
+          />
+
+          {/* Sales */}
+          <Route path="/sales/overview" element={<SalesDashboard />} />
+          <Route path="/sales/tasks" element={<PlaceholderPage title="My Tasks" />} />
+          <Route path="/sales/leads" element={<PlaceholderPage title="My Leads" />} />
+          <Route
+            path="/sales/clients"
+            element={<PlaceholderPage title="My Clients" />}
+          />
+          <Route
+            path="/sales/pipeline"
+            element={<PlaceholderPage title="My Pipeline" />}
+          />
+          <Route
+            path="/sales/listings"
+            element={<PlaceholderPage title="Listings" />}
+          />
+          <Route
+            path="/sales/reports"
+            element={<PlaceholderPage title="My Reports" />}
           />
         </Route>
 
