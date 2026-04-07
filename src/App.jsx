@@ -3,7 +3,9 @@ import { DashboardLayout } from './layouts/DashboardLayout.jsx'
 import { AdminDashboard } from './pages/admin/AdminDashboard.jsx'
 import { AdminAuthoritiesPage } from './pages/admin/AdminAuthoritiesPage.jsx'
 import { ManagerDashboard } from './pages/manager/ManagerDashboard.jsx'
+import { ManagerPermissionsPage } from './pages/manager/ManagerPermissionsPage.jsx'
 import { SalesDashboard } from './pages/sales/SalesDashboard.jsx'
+import { SalesPermissionsPage } from './pages/sales/SalesPermissionsPage.jsx'
 import { PlaceholderPage } from './pages/PlaceholderPage.jsx'
 
 export default function App() {
@@ -53,7 +55,7 @@ export default function App() {
           />
           <Route
             path="/manager/team"
-            element={<PlaceholderPage title="Team Performance" />}
+            element={<ManagerPermissionsPage />}
           />
           <Route
             path="/manager/leads"
@@ -78,7 +80,7 @@ export default function App() {
 
           {/* Sales */}
           <Route path="/sales/overview" element={<SalesDashboard />} />
-          <Route path="/sales/tasks" element={<PlaceholderPage title="My Tasks" />} />
+          <Route path="/sales/tasks" element={<SalesPermissionsPage />} />
           <Route path="/sales/leads" element={<PlaceholderPage title="My Leads" />} />
           <Route
             path="/sales/clients"

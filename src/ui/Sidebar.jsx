@@ -34,7 +34,7 @@ const NAV_MANAGER = [
     items: [
       { to: '/manager/overview', label: 'Team Overview' },
       { to: '/manager/pipeline', label: 'Deal Pipeline' },
-      { to: '/manager/team', label: 'Team Performance' },
+      { to: '/manager/team', label: 'Manager Permissions' },
     ],
   },
   {
@@ -59,6 +59,7 @@ const NAV_SALES = [
     label: 'My Work',
     items: [
       { to: '/sales/overview', label: 'My Dashboard' },
+      { to: '/sales/tasks', label: 'Sales Permissions' },
       { to: '/sales/leads', label: 'My Leads' },
       { to: '/sales/clients', label: 'My Clients' },
       { to: '/sales/pipeline', label: 'My Pipeline' },
